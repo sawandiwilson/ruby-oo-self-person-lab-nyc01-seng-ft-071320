@@ -79,5 +79,5 @@ def start_conversation(person, topic)
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
    
-end
+
 person1 = Person.new("Ian") 
