@@ -55,4 +55,6 @@ class Person
     end
 end
 
+def start
+end
 person1 = Person.new("Ian") 
