@@ -58,6 +58,7 @@ end
 def start_conversation(person, topic)
   objects = [self, topic]
   if topic == "politics"
+    "blah blah partisan blah lobbyist"
    
 end
 person1 = Person.new("Ian") 
