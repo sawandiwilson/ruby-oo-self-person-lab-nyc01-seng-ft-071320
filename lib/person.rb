@@ -55,7 +55,7 @@ class Person
     end
 end
 
-def start_conversation(, topic)
+def start_conversation(person, topic)
    
 end
 person1 = Person.new("Ian") 
