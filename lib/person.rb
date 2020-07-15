@@ -59,6 +59,16 @@ def start_conversation(person, topic)
   objects = [self, topic]
   if topic == "politics"
     "blah blah partisan blah lobbyist"
+    objects.each { |o| o.happiness -= 2}
+      first, second = ["partisan", "lobbyist"]
+    elsif topic == "weather"
+      objects.each { |o| o.happiness += 1}
+      first, second = ["sun", "rain"]
+    end
+    first ||= "blah"
+    second ||= "blah"
+    base_string = "blah blah #{first} blah #{second}"
+  end
    
 end
 person1 = Person.new("Ian") 
