@@ -69,6 +69,16 @@ def start_conversation(person, topic)
     second ||= "blah"
     base_string = "blah blah #{first} blah #{second}"
   end
+  def get_paid(salary)
+    self.bank_account += salary
+    self.happiness += 1
+    "all about the benjamins"
+  end
+
+  def call_friend(friend)
+    [friend, self].each {|o| o.happiness += 3 }
+    "Hi #{friend.name}! It's #{self.name}. How are you?"
+  end
    
 end
 person1 = Person.new("Ian") 
