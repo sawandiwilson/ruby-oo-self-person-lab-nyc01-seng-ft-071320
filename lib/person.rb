@@ -68,6 +68,7 @@ def start_conversation(person, topic)
     second ||= "blah"
     base_string = "blah blah #{first} blah #{second}"
   end
+  
   def get_paid(salary)
     self.bank_account += salary
     self.happiness += 1
