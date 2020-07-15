@@ -1,3 +1,4 @@
+require 'pry'
 
 # your code goes here
 class Person
@@ -27,6 +28,7 @@ class Person
     def happy?
         happiness > 7
     end
+
     def clean?
         hygiene > 7
     end
@@ -47,38 +49,26 @@ class Person
         '♪ another one bites the dust ♫'
     end
 
-  def call_friend(friend)
+    def call_friend(friend)
         self.happiness=(@happiness += 3)
         friend.happiness += 3
         "Hi #{friend.name}! It's #{self.name}. How are you?"
     end
+
+    def start_conversation(personToStart, topic)
+        people = [self, personToStart]
+        if topic == 'politics'
+            people.each {|person| person.happiness -= 2}
+            "blah blah partisan blah lobbyist"
+        elsif topic == 'weather'
+            people.each {|person| person.happiness += 1}
+            "blah blah sun blah rain"
+        else
+            "blah blah blah blah blah"
+        end
+    end
+
 end
 
-def start_conversation(person, topic)
-  objects = [self, topic]
-  if topic == "politics"
-    "blah blah partisan blah lobbyist"
-    objects.each { |o| o.happiness -= 2}
-      first, second = ["partisan", "lobbyist"]
-    elsif topic == "weather"
-      objects.each { |o| o.happiness += 1}
-      first, second = ["sun", "rain"]
-    end
-    first ||= "blah"
-    second ||= "blah"
-    base_string = "blah blah #{first} blah #{second}"
-  end
-  
-  def get_paid(salary)
-    self.bank_account += salary
-    self.happiness += 1
-    "all about the benjamins"
-  end
-
-  def call_friend(friend)
-    [friend, self].each {|o| o.happiness += 3 }
-    "Hi #{friend.name}! It's #{self.name}. How are you?"
-  end
-   
-
-person1 = Person.new("Ian") 
+person1 = Person.new("Ian")
+# binding.pry
